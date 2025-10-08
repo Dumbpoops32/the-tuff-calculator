@@ -4,51 +4,60 @@
 
 import time
 
-def calculate(a, b, operation):
-    if operation == "1":
-        return a + b
-    elif operation == "2":
-        return a - b
-    elif operation == "3":
-        return a * b
-    elif operation == "4":
-        return a / b
+print("[1] for addition")
+print("[2] for subtraction")
+print("[3] for multiplication")
+print("[4] for division")
 
-def main():
-    print("[1] Addition")
-    print("[2] Subtraction")
-    print("[3] Multiplication")
-    print("[4] Division")
-    print("[5] Special Challenge")
+choice = input("Enter your choice (1/2/3/4/5): ")
 
-    choice = input("Enter your choice (1/2/3/4/5): ")
-
-    if choice in ["1", "2", "3", "4"]:
-        try:
-            num1 = float(input("Enter your first number: "))
-            num2 = float(input("Enter your second number: "))
-        except ValueError:
-            print("Invalid input. Please enter a number.")
-            return
-        
-        confirm = input("Are you ready to calculate your result? (y/n): ").lower()
-        if confirm == "y":
-            result = calculate(num1, num2, choice)
-            print(f"Result: {result}")
-        else:
-            print("Calculation cancelled.")
-
-    elif choice == "5":
-        tuff = input("What is 32 + 35: ")
-        if tuff == "67":
-            for _ in range(67):
-                print(67)
-                time.sleep(0.2)
-        else:
-            print("Incorrect! Try again next time.")
-
+if choice == "1":
+    num1 = int(input("Enter your first number: "))
+    num2 = int(input("Enter your second number: "))
+    confirm = input("Are you ready to calculate your result? (y/n): ")
+    if confirm.lower() == "y":
+        print(num1 + num2)
     else:
-        print("Invalid choice. Please select 1, 2, 3, 4, or 5.")
+        print("Okay calculation cancelled")
 
-if __name__ == "__main__":
-    main()
+elif choice == "2":
+    num1 = int(input("Enter your first number: "))
+    num2 = int(input("Enter your second number: "))
+    confirm = input("Are you ready to calculate your result? (y/n): ")
+    if confirm.lower() == "y":
+        print(num1 - num2)
+    else:
+        print("Okay calculation cancelled")
+
+elif choice == "3":
+    num1 = int(input("Enter your first number: "))
+    num2 = int(input("Enter your second number: "))
+    confirm = input("Are you ready to calculate your result? (y/n): ")
+    if confirm.lower() == "y":
+        print(num1 * num2)
+    else:
+        print("Okay calculation cancelled")
+
+elif choice == "4":
+    num1 = int(input("Enter your first number: "))
+    num2 = int(input("Enter your second number: "))
+    confirm = input("Are you ready to calculate your result? (y/n): ")
+    if confirm.lower() == "y":
+        if num2 != 0:
+            print(num1 / num2)
+        else:
+            print("Cannot divide by zero")
+    else:
+        print("Okay calculation cancelled")
+
+elif choice == "5":
+    tuff = input("What is 32 + 35: ")
+    if tuff == "67":
+        for _ in range(67):
+            print(32 + 35)
+            time.sleep(0.2)
+    else:
+        print("Incorrect answer!")
+else:
+    print("Invalid choice")
+
